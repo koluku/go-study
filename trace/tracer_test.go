@@ -17,8 +17,3 @@ func TestNew(t *testing.T) {
 		}
 	}
 }
-
-func TestOff(t *testing.T) {
-	var sillentTracer Tracer = Off()
-	sillentTracer.Trace("データ")
-}
