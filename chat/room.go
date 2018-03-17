@@ -18,7 +18,7 @@ type room struct {
 	// clientsには在籍しているすべてのクライアントが保持されます。
 	clients map[*client]bool
 	// tracerはチャットルーム上で行われた操作ログを受け取ります。
-	tracer trace.Tracer
+	tracer *trace.Tracer
 }
 
 func newRoom() *room {
@@ -27,7 +27,6 @@ func newRoom() *room {
 		join:    make(chan *client),
 		leave:   make(chan *client),
 		clients: make(map[*client]bool),
-		tracer:  trace.Off(),
 	}
 }
 
