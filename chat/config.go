@@ -6,17 +6,18 @@ import (
 
 // Config is
 type Config struct {
-	Oauth2 oauth2Config
+	Discord OAuth2
 }
 
-type oauth2Config struct {
-	ID     int
+// OAuth2 is
+type OAuth2 struct {
+	ID     string
 	Secret string
 }
 
 func getConfig() *Config {
 	var config Config
-	_, err := toml.DecodeFile("config.tml", &config)
+	_, err := toml.DecodeFile("config.toml", &config)
 	if err != nil {
 		panic(err)
 	}
